@@ -206,6 +206,53 @@
     </div>
   </section>
 
+  <section id="lab" style="padding-top: 0;">
+    <div class="container">
+      <div class="section-title">
+        <div>
+          <span class="badge" data-i18n="lab_badge">Try it live</span>
+          <h2 data-i18n="lab_title">The Readability Lab.</h2>
+        </div>
+        <p data-i18n="lab_body">Paste any clause and watch the formulas above work in real time. Everything runs in your browser — nothing is uploaded.</p>
+      </div>
+
+      <div class="lab" id="readabilityLab">
+        <div class="card lab-editor">
+          <label class="mono" for="labInput" data-i18n="lab_input_label">Your clause</label>
+          <textarea id="labInput" rows="8" spellcheck="false"></textarea>
+          <div class="lab-actions">
+            <button class="btn btn-primary" id="labPlain" type="button" data-i18n="lab_plain">Swap in plain English</button>
+            <button class="btn btn-secondary" id="labSample" type="button" data-i18n="lab_sample">Try another sample</button>
+            <button class="btn btn-secondary" id="labClear" type="button" data-i18n="lab_clear">Clear</button>
+          </div>
+          <p class="mono lab-delta" id="labDelta" aria-live="polite"></p>
+        </div>
+
+        <div class="card lab-scores" aria-live="polite">
+          <div class="mono" data-i18n="lab_fre">Flesch Reading Ease</div>
+          <div class="lab-big"><span id="labFre">–</span><span class="lab-band" id="labBand"></span></div>
+          <div class="lab-meter" id="labMeter" role="presentation"><span></span></div>
+          <dl class="lab-stats">
+            <div><dt class="mono" data-i18n="lab_fog">Gunning Fog</dt><dd id="labFog">–</dd></div>
+            <div><dt class="mono" data-i18n="lab_fk">FK grade</dt><dd id="labFk">–</dd></div>
+            <div><dt class="mono" data-i18n="lab_wps">Words / sentence</dt><dd id="labWps">–</dd></div>
+            <div><dt class="mono" data-i18n="lab_words">Words</dt><dd id="labWords">–</dd></div>
+          </dl>
+        </div>
+
+        <div class="card lab-output">
+          <div class="lab-legend mono">
+            <span><mark class="lab-legal">abc</mark> <span data-i18n="lab_legend_legal">Legalese</span></span>
+            <span><mark class="lab-passive">abc</mark> <span data-i18n="lab_legend_passive">Passive voice</span></span>
+            <span><span class="lab-long">abc</span> <span data-i18n="lab_legend_long">Sentence over 20 words</span></span>
+          </div>
+          <p class="lab-preview" id="labPreview"></p>
+          <p class="mono" id="labFlags"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section>
     <div class="container">
       <div class="section-title">
@@ -230,6 +277,7 @@
   </footer>
 
   <script src="app.js"></script>
+  <script src="lab.js"></script>
 </body>
 </html>
 

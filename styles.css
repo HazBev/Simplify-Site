@@ -876,3 +876,86 @@ body.theme-dark.download-page::before {
     display: none !important;
   }
 }
+
+/* Readability Lab */
+.lab {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  gap: 20px;
+}
+
+.lab-output { grid-column: 1 / -1; }
+
+.lab-editor textarea {
+  width: 100%;
+  margin-top: 8px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--surface-muted);
+  color: var(--text);
+  font: inherit;
+  font-size: 15px;
+  line-height: 1.6;
+  resize: vertical;
+}
+
+.lab-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+.lab-actions .btn { border: none; cursor: pointer; font: inherit; font-weight: 600; }
+.lab-delta { margin-top: 10px; min-height: 1.6em; color: var(--primary); }
+
+.lab-big { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin: 4px 0 12px; }
+#labFre { font-size: 56px; font-weight: 700; line-height: 1; font-variant-numeric: tabular-nums; }
+.lab-band { font-weight: 600; color: var(--muted); }
+
+.lab-meter {
+  --score: 0;
+  height: 10px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #ef4444 0%, #f59e0b 45%, #22c55e 100%);
+  position: relative;
+}
+
+.lab-meter span {
+  position: absolute;
+  top: 50%;
+  left: calc(var(--score) * 1%);
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 3px solid var(--text);
+  transform: translate(-50%, -50%);
+  transition: left 0.35s ease;
+}
+
+.lab-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.lab-stats dd { font-size: 22px; font-weight: 600; font-variant-numeric: tabular-nums; }
+
+.lab-legend { display: flex; flex-wrap: wrap; gap: 18px; margin-bottom: 14px; }
+
+.lab-preview { font-size: 16px; line-height: 1.9; margin-bottom: 12px; }
+
+.lab-legal, .lab-passive {
+  color: inherit;
+  border-radius: 4px;
+  padding: 1px 3px;
+  cursor: help;
+}
+.lab-legal { background: rgba(245, 158, 11, 0.28); }
+.lab-passive { background: rgba(37, 99, 235, 0.22); }
+.lab-long {
+  text-decoration: underline wavy rgba(239, 68, 68, 0.75);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 5px;
+}
+
+@media (max-width: 900px) {
+  .lab { grid-template-columns: 1fr; }
+}
